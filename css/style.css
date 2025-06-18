@@ -287,7 +287,30 @@ body {
 
 .hero, .courses{
   width: 97vw;
+  height: 100vh;
   margin-right: 3vw;
+}
+
+.gambarSaya{
+  width: 50vw;
+  background-color: #007bff;
+}
+
+.hero > .containerKiri{
+  width: fit-content;
+  height: auto;
+  padding: 2rem;
+  margin-left: 3rem;
+  margin-top: 3rem;
+  border: 4px #1a1a1a solid;
+}
+
+.containerKiri > h1{
+  font-size: 20rem;
+}
+
+.containerKiri > h2{
+  font-size: 2rem;
 }
 
 .bento-container {
@@ -324,7 +347,6 @@ body {
   flex: 1; /* Divide the large box into 3 equal sections */
   margin: 0 10px; /* Add spacing between sections */
   padding: 30px;
-  /* border-radius: 20px; */
   border: 4px solid #111111; /* Optional: Add a border for visibility */
   filter:drop-shadow(10px 10px #000000);
   background-color: #fff; /* Optional: Background color for news sections */
