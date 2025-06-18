@@ -1,0 +1,549 @@
+/* Importing Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(#F1F3FF, #CBD4FF);
+  overflow-y: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 270px;
+  height: 100vh;
+  background: #eaeaea;
+  transition: all 0.4s ease;
+}
+
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  position: relative;
+  padding: 25px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.sidebar-header .sidebar-toggler,
+.sidebar-menu-button {
+  position: absolute;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  color: #eaeaea;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  background: #151a2d;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+  filter: drop-shadow(3px 3px #111111);
+}
+
+.sidebar.collapsed .sidebar-header .sidebar-toggler {
+  transform: translate(-4px, 65px);
+}
+
+.sidebar-header .sidebar-toggler span,
+.sidebar-menu-button span {
+  font-size: 1.75rem;
+  transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .sidebar-toggler span {
+  transform: rotate(180deg);
+}
+
+.sidebar-header .sidebar-toggler:hover {
+  background: #fff;
+  border: solid 1px #111111;
+  color: #151a2d;
+}
+
+.sidebar-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  padding: 0 15px;
+  flex-direction: column;
+  transform: translateY(15px);
+  transition: 0.4s ease;
+}
+
+.sidebar .sidebar-nav .primary-nav {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding-bottom: 20px;
+  height: calc(100vh - 227px);
+  scrollbar-color: transparent transparent;
+}
+
+.sidebar .sidebar-nav .primary-nav:hover {
+  scrollbar-color: #EEF2FF transparent;
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+  overflow: unset;
+  transform: translateY(65px);
+}
+
+.sidebar-nav .nav-item .nav-link {
+  color: #151a2d;
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+  /* border-radius: 8px; */
+  padding: 15px 15px;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  transition: 0.4s ease;
+}
+
+.sidebar-nav .nav-item:is(:hover, .open)>.nav-link:not(.dropdown-title) {
+  background: #fff;
+  border: solid 1px #111111;
+  filter: drop-shadow(3px 3px #111111);
+}
+
+.sidebar .nav-link .nav-label {
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .nav-link :where(.nav-label, .dropdown-icon) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.collapsed .nav-link .dropdown-icon {
+  transition: opacity 0.3s 0s ease
+}
+
+.sidebar-nav .secondary-nav {
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  background: #eaeaea;
+}
+
+.sidebar-nav .nav-item {
+  position: relative;
+}
+
+/* Dropdown Stylings */
+.sidebar-nav .dropdown-container .dropdown-icon {
+  margin: 0 -4px 0 auto;
+  transition: transform 0.4s ease, opacity 0.3s 0.2s ease;
+}
+
+.sidebar-nav .dropdown-container.open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .dropdown-menu {
+  height: 0;
+  overflow-y: hidden;
+  list-style: none;
+  padding-left: 15px;
+  transition: height 0.4s ease;
+}
+
+.sidebar.collapsed .dropdown-menu {
+  position: absolute;
+  top: -10px;
+  left: 100%;
+  opacity: 0;
+  height: auto !important;
+  padding-right: 10px;
+  overflow-y: unset;
+  pointer-events: none;
+  border-radius: 0 10px 10px 0;
+  background: #eaeaea;
+  transition: 0s;
+}
+
+.sidebar.collapsed .dropdown-menu:has(.dropdown-link) {
+  padding: 7px 10px 7px 24px;
+}
+
+.sidebar.sidebar.collapsed .nav-item:hover>.dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(12px);
+  transition: all 0.4s ease;
+}
+
+.sidebar.sidebar.collapsed .nav-item:hover>.dropdown-menu:has(.dropdown-link) {
+  transform: translateY(10px);
+}
+
+.dropdown-menu .nav-item .nav-link {
+  color: #151a2d;
+  padding: 9px 15px;
+}
+
+.sidebar.collapsed .dropdown-menu .nav-link {
+  padding: 7px 15px;
+}
+
+.dropdown-menu .nav-item .nav-link.dropdown-title {
+  display: none;
+  color: #151a2d;
+  padding: 9px 15px;
+}
+
+.dropdown-menu:has(.dropdown-link) .nav-item .dropdown-title {
+  font-weight: 500;
+  padding: 7px 15px;
+}
+
+.sidebar.collapsed .dropdown-menu .nav-item .dropdown-title {
+  display: block;
+}
+
+.sidebar-menu-button {
+  display: none;
+}
+
+/* Responsive media query code for small screens */
+@media (max-width: 768px) {
+  .sidebar-menu-button {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    height: 40px;
+    width: 42px;
+    display: flex;
+    color: #F1F4FF;
+    background: #eaeaea;
+  }
+
+  .sidebar.collapsed {
+    width: 270px;
+    left: -270px;
+  }
+
+  .sidebar.collapsed .sidebar-header .sidebar-toggler {
+    transform: none;
+  }
+
+  .sidebar.collapsed .sidebar-nav .primary-nav {
+    transform: translateY(15px);
+  }
+}
+
+.content-wrapper{
+  transition: all 0.4s ease;
+}
+
+.contentinnerwrapper{
+    padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  width: 400vw;
+  align-items: center;
+  justify-content: start;
+  background-color: #fff;
+}
+
+.contentinnerwrapper {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.hero, .courses{
+  width: 97vw;
+  margin-right: 3vw;
+}
+
+.bento-container {
+  display: grid;
+  grid-template-rows: 2fr 1fr; /* Top section takes 2x height of bottom */
+  grid-template-columns: 1fr 1fr; /* 3 equal columns */
+  gap: 20px; /* Add spacing between boxes */
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.bento-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff; /* Optional: Background color */
+}
+
+.bento-box.large {
+  grid-column: span 3; /* Span all 3 columns */
+  display: flex;
+  flex-direction: row; /* Arrange news sections horizontally */
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px;
+  background-color: #fff; /* Optional: Background color for large box */
+}
+
+.news-section {
+  flex: 1; /* Divide the large box into 3 equal sections */
+  margin: 0 10px; /* Add spacing between sections */
+  padding: 30px;
+  /* border-radius: 20px; */
+  border: 4px solid #111111; /* Optional: Add a border for visibility */
+  filter:drop-shadow(10px 10px #000000);
+  background-color: #fff; /* Optional: Background color for news sections */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  text-align: center; /* Center text inside */
+}
+
+.news-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.news-section p {
+  font-size: 1rem;
+  color: black;
+}
+
+.news-section button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 2px solid #111111;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.news-section button:hover {
+  background-color: #eaeaea;
+}
+
+.bento-box img {
+  max-width: 80%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.bento-box button {
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #111111;
+  color: #111111;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+
+.bento-box button:hover {
+  background-color: #007bff;
+  filter: drop-shadow(5px 5px #111111);
+}
+
+.cv-container {
+  margin-left: 90px;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  width: auto;
+  height: 100vh;
+}
+
+.cv-left {
+  flex: 2; /* Make the left section take up 2 parts */
+  margin-right: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  border: 4px solid #111111; /* Optional: Add a border for visibility */
+  background-color: #fff;
+  filter: drop-shadow(10px 10px #000000);
+}
+
+.cv-right {
+  flex: 1; /* Make the right section take up 1 part */
+  margin-left: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  border: 4px solid #111111; /* Optional: Add a border for visibility */
+  background-color: #fff;
+  filter: drop-shadow(10px 10px #000000);
+}
+
+.cv-left h2, .cv-right h2 {
+  margin: 20px 0px 10px 0px;
+  font-size: 2.5rem;
+}
+
+.cv-left p, .cv-left li{
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.cv-left ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.cv-right ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.cv-right ul li {
+  margin-bottom: 10px;
+}
+
+.cv-right ul li a {
+  text-decoration: none;
+  color: #111111;
+}
+
+.cv-right ul li a:hover {
+  text-decoration: underline;
+}
+
+.download-cv-button {
+  margin-top: 20px;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid #111111;
+  color: #111111;
+  cursor: pointer;
+  text-align: center;
+  transition: ease 0.3s;
+}
+
+.download-cv-button:hover {
+  background-color: #007bff;
+  filter: drop-shadow(5px 5px #111111);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 10px; /* Add spacing between the boxes */
+  padding: 0;
+  list-style: none; /* Remove default list styling */
+}
+
+.skills-list li {
+  background-color: #fff; /* Light background color for the boxes */
+  color: #111111; /* Text color */
+  padding: 10px 15px; /* Add padding inside the boxes */
+  border: 2px solid #111111; /* Add a border for visibility */
+  font-size: 1rem; /* Adjust font size */
+  text-align: center; /* Center the text inside the box */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, background-color 0.3s ease, filter 0.3s ease; /* Add transition for smooth effect */
+}
+
+.skills-list li:hover {
+  background-color: #007bff; /* Change background color on hover */
+  color: #111111; /* Change text color on hover */
+  filter: drop-shadow(5px 5px #111111);
+}
+
+.merch {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  padding: 40px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  text-align: center;
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.merch-container {
+  max-width: 1200px;
+  width: 100%; /* Ensure it spans the full width of the section */
+  height: 100%; /* Ensure it spans the full height of the section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.merch-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between tiles */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  width: 100%; /* Full width of the container */
+  height: auto; /* Adjust height based on content */
+}
+
+.merch-tile {
+  flex: 1 1 calc(50% - 20px); /* Two tiles per row with spacing */
+  max-width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.merch-tile img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.merch-tile p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
