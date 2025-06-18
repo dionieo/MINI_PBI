@@ -301,16 +301,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 20%;
+}
+
+.gambarSaya img{
+  width: calc(100% * 2);
+  height: auto;
+  transform-origin: 50% 100%;
+  rotate: -10deg;
+  z-index: 1;
+  filter: saturate(0.9);
+  translate: 15rem 0px;
+}
+
+.gambarSaya img:hover{
+  filter: saturate(1);
+  transition: 0.3s ease;
+  rotate: -25deg;
 }
 
 .hero > .containerKiri{
-  width: 70%;
+  width: 80%;
   height: auto;
   padding: 2rem;
   margin-left: 3rem;
   margin-top: 3rem;
   border: 4px #1a1a1a solid;
+  z-index: 3;
+  background-color: #fff;
 }
 
 .containerKiri > h1{
