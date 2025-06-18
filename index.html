@@ -8,201 +8,182 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     </head>
     <body>
-    <script src="https://kit.fontawesome.com/e0380c05bc.js" crossorigin="anonymous"></script>
-    <button class="sidebar-menu-button">
-        <span class="material-symbols-rounded">menu</span>
-    </button>
-
-    <aside class="sidebar">
-      <header class="sidebar-header">
-        <a href="#" class="header-logo">
-          <img src="./img/logodion.png" alt="logo dion" />
-        </a>
-        <button class="sidebar-toggler">
-          <span class="material-symbols-rounded">chevron_left</span>
+        <script src="https://kit.fontawesome.com/e0380c05bc.js" crossorigin="anonymous"></script>
+        <!-- SIDEBAR -->
+        <button class="sidebar-menu-button">
+            <span class="material-symbols-rounded">menu</span>
         </button>
-      </header>
-
-      <nav class="sidebar-nav">
-        <!-- Primary Top Nav -->
-        <ul class="nav-list primary-nav">
-          <li class="nav-item">
-            <a href="#hero" class="nav-link">
-              <span class="material-symbols-rounded">home</span>
-              <span class="nav-label">Home</span>
+        <aside class="sidebar">
+            <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="./img/logodion.png" alt="logo dion" />
             </a>
-            <ul class="dropdown-menu">
-              <li class="nav-item"><a class="nav-link dropdown-title">Home</a></li>
+            <button class="sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+            </header>
+
+            <nav class="sidebar-nav">
+            <!-- Primary Top Nav -->
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                <a href="#hero" class="nav-link">
+                    <span class="material-symbols-rounded">home</span>
+                    <span class="nav-label">Home</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link dropdown-title">Home</a></li>
+                </ul>
+                </li>
+
+                <li class="nav-item">
+                <a href="#courses" class="nav-link">
+                    <span class="material-symbols-rounded">book</span>
+                    <span class="nav-label">Courses</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link dropdown-title">Courses</a></li>
+                </ul>
+                </li>
+
+                <li class="nav-item">
+                <a href="#cv" class="nav-link">
+                    <span class="material-symbols-rounded">docs</span>
+                    <span class="nav-label">Curriculum Vitae</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link dropdown-title">Curriculum Vitae</a></li>
+                </ul>
+                </li>
             </ul>
-          </li>
 
-          <!-- Dropdown -->
-          <!-- <li class="nav-item dropdown-container">
-            <a href="#" class="nav-link dropdown-toggle">
-              <span class="material-symbols-rounded">calendar_today</span>
-              <span class="nav-label">Services</span>
-              <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
-            </a> -->
-
-            <!-- Dropdown Menu -->
-            <!-- <ul class="dropdown-menu">
-              <li class="nav-item"><a class="nav-link dropdown-title">Services</a></li>
-              <li class="nav-item"><a href="#" class="nav-link dropdown-link">IT Consulting</a></li>
-              <li class="nav-item"><a href="#" class="nav-link dropdown-link">Cloud Solutions</a></li>
-              <li class="nav-item"><a href="#" class="nav-link dropdown-link">Mobile Apps</a></li>
+            <ul class="nav-list secondary-nav">
+                <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <span class="material-symbols-rounded">help</span>
+                    <span class="nav-label">Support</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link dropdown-title">Support</a></li>
+                </ul>
+                </li>
             </ul>
-          </li> -->
+            </nav>
+        </aside>
 
-          <li class="nav-item">
-            <a href="#courses" class="nav-link">
-              <span class="material-symbols-rounded">book</span>
-              <span class="nav-label">Courses</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="nav-item"><a class="nav-link dropdown-title">Courses</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#cv" class="nav-link">
-              <span class="material-symbols-rounded">docs</span>
-              <span class="nav-label">Curriculum Vitae</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="nav-item"><a class="nav-link dropdown-title">Curriculum Vitae</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <!-- Secondary Bottom Nav -->
-        <ul class="nav-list secondary-nav">
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <span class="material-symbols-rounded">help</span>
-              <span class="nav-label">Support</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="nav-item"><a class="nav-link dropdown-title">Support</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-
-    <div class="content-wrapper">
-      <div class="hero" id="hero">
-        <img src="./img/hero2.png" alt="hero section picture" style="width: 100vw; height: auto  ;">
-      </div>
-      <div class="courses" id="courses">
-        <div class="contentinnerwrapper">
-          <div class="bento-container">
-            <!-- Top Large Bento Box -->
-            <div class="bento-box large">
-              <div class="news-section">
-                <div>
-                  <h3>Technopreneurship</h3>
-                  <p>Teknologi dan bisnis bukan lagi dua dunia yang terpisah. Yuk kenali bagaimana technopreneur bisa menciptakan inovasi dan peluang usaha yang berdampak besar di era digital!</p>
-                  <a href="https://drive.google.com/file/d/1nOHCMaLw-5fEbZ3xQMNt0evhsMuORs2N/view?usp=drive_link" target="_blank"><button>Read More</button></a>
+        <div class="content-wrapper">
+            <div class="hero" id="hero">
+            <img src="./img/hero2.png" alt="hero section picture" style="width: 100vw; height: auto  ;">
+            </div>
+            <div class="courses" id="courses">
+            <div class="contentinnerwrapper">
+                <div class="bento-container">
+                <!-- Top Large Bento Box -->
+                <div class="bento-box large">
+                    <div class="news-section">
+                    <div>
+                        <h3>Technopreneurship</h3>
+                        <p>Teknologi dan bisnis bukan lagi dua dunia yang terpisah. Yuk kenali bagaimana technopreneur bisa menciptakan inovasi dan peluang usaha yang berdampak besar di era digital!</p>
+                        <a href="https://drive.google.com/file/d/1nOHCMaLw-5fEbZ3xQMNt0evhsMuORs2N/view?usp=drive_link" target="_blank"><button>Read More</button></a>
+                    </div>
+                    </div>
+                    <div class="news-section">
+                    <div>
+                        <h3>Prooses Menjadi Teknopreneur</h3>
+                        <p>Bangun startup-mu dari fondasi yang tepat! Mulai dari tim yang solid hingga solusi atas masalah nyata — semua bisa dirancang lewat kunci 3P + 2P ini...</p>
+                        <a href="https://drive.google.com/file/d/1dMWgTSYUN_LjN3w2uUh6p_qtcZC3wKCX/view?usp=drive_link" target="_blank"><button>Read More</button></a>
+                    </div>
+                    </div>
+                    <div class="news-section">
+                    <div>
+                        <h3>Start Up</h3>
+                        <p>Punya ide saja belum cukup. Dibutuhkan pengetahuan, keterampilan, dan sikap pantang menyerah untuk jadi technopreneur sejati yang mampu membawa startup hingga sukses.</p>
+                        <a href="https://drive.google.com/file/d/1n6iaCaXdsDAYDzYqZxKVsTmEDkuYEEZm/view?usp=drive_link" target="_blank"><button>Read More</button></a>
+                    </div>
+                    </div>
                 </div>
-              </div>
-              <div class="news-section">
-                <div>
-                  <h3>Prooses Menjadi Teknopreneur</h3>
-                  <p>Bangun startup-mu dari fondasi yang tepat! Mulai dari tim yang solid hingga solusi atas masalah nyata — semua bisa dirancang lewat kunci 3P + 2P ini...</p>
-                  <a href="https://drive.google.com/file/d/1dMWgTSYUN_LjN3w2uUh6p_qtcZC3wKCX/view?usp=drive_link" target="_blank"><button>Read More</button></a>
-                </div>
-              </div>
-              <div class="news-section">
-                <div>
-                  <h3>Start Up</h3>
-                  <p>Punya ide saja belum cukup. Dibutuhkan pengetahuan, keterampilan, dan sikap pantang menyerah untuk jadi technopreneur sejati yang mampu membawa startup hingga sukses.</p>
-                  <a href="https://drive.google.com/file/d/1n6iaCaXdsDAYDzYqZxKVsTmEDkuYEEZm/view?usp=drive_link" target="_blank"><button>Read More</button></a>
-                </div>
-              </div>
-            </div>
 
-            <!-- Bottom 3 Bento Boxes -->
-            <div class="bento-box">
-              <h2>Universitas</h2>
-              <img src="./img/logo.png" alt="logo usti" />
+                <!-- Bottom 3 Bento Boxes -->
+                <div class="bento-box">
+                    <h2>Universitas</h2>
+                    <img src="./img/logo.png" alt="logo usti" />
+                </div>
+                <div class="bento-box">
+                    <h2>Dosen Pembimbing</h2>
+                    <img src="./img/pakduwi.jpg" alt="foto Pak Dwi Haryono, M.Kom" style="width: 20%; height: auto; margin-bottom: 10px;">
+                    <p>Dwi Haryono, S.Kom, M.Kom</p>
+                </div>
+                </div>
             </div>
-            <div class="bento-box">
-              <h2>Dosen Pembimbing</h2>
-              <img src="./img/pakduwi.jpg" alt="foto Pak Dwi Haryono, M.Kom" style="width: 20%; height: auto; margin-bottom: 10px;">
-              <p>Dwi Haryono, S.Kom, M.Kom</p>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="cv" id="cv">
-        <div class="cv-container">
-          <!-- Left Section -->
-          <div class="cv-left">
-            <h2>About Me</h2>
-            <p>
-              I am a passionate programmer with experience in web development and mobile app. I enjoy solving complex problems and creating innovative solutions that make an impact. Some of my key achievements include:
-            </p>
-            <ul>
-              <li>Developed a personal website to showcase my portfolio.</li>
-              <li>Built a mobile app for my university assigment</li>
-              <li>Built a lot of website for practices</li>
-            </ul>
-            <h2>Skills</h2>
-            <ol class="skills-list">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Java</li>
-              <li>PHP</li>
-              <li>Python</li>
-              <li>Kotlin</li>
-              <li>R</li>
-            </ol>
-            <p>
-              I am always eager to learn new technologies and improve my skills. I believe in continuous learning and staying updated with the latest trends in the tech industry.
-            </p>
-          </div>
+            <div class="cv" id="cv">
+            <div class="cv-container">
+                <div class="cv-left">
+                <h2>About Me</h2>
+                <p>
+                    I am a passionate programmer with experience in web development and mobile app. I enjoy solving complex problems and creating innovative solutions that make an impact. Some of my key achievements include:
+                </p>
+                <ul>
+                    <li>Developed a personal website to showcase my portfolio.</li>
+                    <li>Built a mobile app for my university assigment</li>
+                    <li>Built a lot of website for practices</li>
+                </ul>
+                <h2>Skills</h2>
+                <ol class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Python</li>
+                    <li>Kotlin</li>
+                    <li>R</li>
+                </ol>
+                <p>
+                    I am always eager to learn new technologies and improve my skills. I believe in continuous learning and staying updated with the latest trends in the tech industry.
+                </p>
+                </div>
 
-          <!-- Right Section -->
-          <div class="cv-right">
-            <h2>Connect with Me</h2>
-            <ul class="social-media">
-              <li><a href="https://github.com/dionieo" target="_blank">
-                <i class="fa-brands fa-github" style="font-size: 4rem;"></i> Github | dionieo
-              </a></li>
-              <li><a href="https://www.linkedin.com/in/dionisius-denanta-8ab3ba231/" target="_blank">
-                <i class="fa-brands fa-linkedin" style="font-size: 4rem;"></i> LinkedIn | Dionisius Denanta
-              </a></li>
-              <li><a href="https://instagram.com/diondenanta" target="_blank">
-                <i class="fa-brands fa-instagram" style="font-size: 4rem;"></i> Instagram | @diondenanta
-              </a></li>
-            </ul>
-            <a href="https://drive.google.com/file/d/121NHJ-0gCQC6-CTYgSGV2A59fvkhbxK-/view?usp=sharing" target="_blank">
-              <button class="download-cv-button">See my CV</button>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="merch" id="merch">
-        <div class="merch-container">
-          <h2>Merchandise</h2>
-          <div class="merch-content">
-            <!-- Tile 1 -->
-            <div class="merch-tile">
-              <img src="./img/merch1.png" alt="Merch Item 1" />
-              <p>Exclusive Keychain</p>
+                <!-- Right Section -->
+                <div class="cv-right">
+                <h2>Connect with Me</h2>
+                <ul class="social-media">
+                    <li><a href="https://github.com/dionieo" target="_blank">
+                    <i class="fa-brands fa-github" style="font-size: 4rem;"></i> Github | dionieo
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/dionisius-denanta-8ab3ba231/" target="_blank">
+                    <i class="fa-brands fa-linkedin" style="font-size: 4rem;"></i> LinkedIn | Dionisius Denanta
+                    </a></li>
+                    <li><a href="https://instagram.com/diondenanta" target="_blank">
+                    <i class="fa-brands fa-instagram" style="font-size: 4rem;"></i> Instagram | @diondenanta
+                    </a></li>
+                </ul>
+                <a href="https://drive.google.com/file/d/121NHJ-0gCQC6-CTYgSGV2A59fvkhbxK-/view?usp=sharing" target="_blank">
+                    <button class="download-cv-button">See my CV</button>
+                </a>
+                </div>
             </div>
-            <!-- Tile 2 -->
-            <div class="merch-tile">
-              <img src="./img/merch2.jpg" alt="Merch Item 2" />
-              <p>Stiker Pack</p>
             </div>
-          </div>
+            <div class="merch" id="merch">
+            <div class="merch-container">
+                <h2>Merchandise</h2>
+                <div class="merch-content">
+                <!-- Tile 1 -->
+                <div class="merch-tile">
+                    <img src="./img/merch1.png" alt="Merch Item 1" />
+                    <p>Exclusive Keychain</p>
+                </div>
+                <!-- Tile 2 -->
+                <div class="merch-tile">
+                    <img src="./img/merch2.jpg" alt="Merch Item 2" />
+                    <p>Stiker Pack</p>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
     
-    <!-- Script -->
-    <script src="./js/script.js"></script>
-  </body>
+        <!-- Script -->
+        <script src="./js/script.js"></script>
+    </body>
 </html>
