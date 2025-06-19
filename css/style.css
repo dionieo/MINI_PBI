@@ -261,10 +261,6 @@ body {
   transition: all 0.4s ease;
 }
 
-.contentinnerwrapper{
-    padding: 20px;
-    height: 90vh;
-}
 
 .content-wrapper {
   display: flex;
@@ -272,17 +268,11 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  width: 400vw;
+  width: calc(100vw * 3.9);
   align-items: center;
   justify-content: start;
   background-color: #fff;
   margin-left: 85px;
-}
-
-.contentinnerwrapper {
-  text-align: center;
-  background-color: #fff;
-  padding: 20px;
 }
 
 .hero, .courses{
@@ -299,6 +289,7 @@ body {
   flex-direction: row;
   align-items: center;
   height: 90vh;
+  width: 100vw;
 }
 
 .gambarSaya{
@@ -348,6 +339,13 @@ body {
 
 
 /* MARK: PROJECTS */
+.contentinnerwrapper{
+    height: 90vh;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    margin-right: 100px;
+}
 
 .contentinnerwrapper>h1{
   width: 100%;
@@ -361,21 +359,21 @@ body {
 
 .bento-container {
   display: grid;
-  grid-template-rows: 1fr 1fr; /* Top section takes same height of bottom */
-  grid-template-columns: 1fr 1fr; /* 3 equal columns */
-  gap: 20px; /* Add spacing between boxes */
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   width: 90vw;
   height: calc(90% - 20px);
   background-color: #fff;
 }
 
 .bento-box.large {
-  grid-column: span 3; /* Span all 3 columns */
+  grid-column: span 3;
   display: flex;
-  flex-direction: row; /* Arrange news sections horizontally */
+  flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #fff; /* Optional: Background color for large box */
+  background-color: #fff;
 }
 
 .news-section {
@@ -449,6 +447,7 @@ body {
 
 /* MARK: ABOUT */
 .about{
+  width: 100vw; /* Full viewport width */
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -570,59 +569,80 @@ body {
 
 
 
-/* MARK: MERCH */
-.merch {
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  padding: 40px 20px;
-  background-color: #f9f9f9; /* Light background for contrast */
+/* MARK: CONNECT */
+.connect {
+  width: 90vw;
+  height: 90vh;
+  padding: 40px;
+  background-color: #fff;
   text-align: center;
-  display: flex; /* Use flexbox for alignment */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-}
-
-.merch-container {
-  max-width: 1200px;
-  width: 100%; /* Ensure it spans the full width of the section */
-  height: 100%; /* Ensure it spans the full height of the section */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 100px;
 }
 
-.merch-content {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between tiles */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  width: 100%; /* Full width of the container */
-  height: auto; /* Adjust height based on content */
-}
-
-.merch-tile {
-  flex: 1 1 calc(50% - 20px); /* Two tiles per row with spacing */
-  max-width: 300px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-}
-
-.merch-tile img {
+.connect h2 {
   width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 20px;
+  background-color: #fff;
+  border: 4px solid #111111;
+  filter:drop-shadow(10px 10px #000000);
 }
 
-.merch-tile p {
+.bento-social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  height: 90vh;
+}
+
+.bento-social-box {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #222;
   font-size: 1.2rem;
-  color: #555;
-  margin-top: 10px;
+  transition: transform 0.15s, box-shadow 0.15s, color 0.15s;
+  width: 100%;
+  height: 100%;
+}
+
+.bento-social-box:hover {
+  color: #0077b5;
+}
+
+.bento-social-box i {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.bento-social-box span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.bento-social-box small {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .bento-social-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px;
+    height: auto;
+  }
 }
