@@ -16,6 +16,8 @@ body {
   overflow-y: hidden;
 }
 
+
+/* MARK: SIDEBAR */
 .sidebar {
   position: fixed;
   top: 0;
@@ -154,7 +156,6 @@ body {
   position: relative;
 }
 
-/* Dropdown Stylings */
 .sidebar-nav .dropdown-container .dropdown-icon {
   margin: 0 -4px 0 auto;
   transition: transform 0.4s ease, opacity 0.3s 0.2s ease;
@@ -262,13 +263,14 @@ body {
 
 .contentinnerwrapper{
     padding: 20px;
+    height: 90vh;
 }
 
 .content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   position: relative;
   width: 400vw;
   align-items: center;
@@ -289,6 +291,9 @@ body {
   margin-right: 3vw;
 }
 
+
+
+/* MARK: HERO SECTION */
 .hero{
   display: flex;
   flex-direction: row;
@@ -340,24 +345,27 @@ body {
   font-size: 2.5rem;
 }
 
-.bento-container {
-  display: grid;
-  grid-template-rows: 2fr 1fr; /* Top section takes 2x height of bottom */
-  grid-template-columns: 1fr 1fr; /* 3 equal columns */
-  gap: 20px; /* Add spacing between boxes */
-  width: 100vw;
-  height: 100vh;
+
+/* MARK: PROJECTS */
+
+.contentinnerwrapper>h1{
+  width: 100%;
+  height: 10%;
+  padding: 20px;
+  border: #000000 4px solid;
+  margin-bottom: 20px;
   background-color: #fff;
+  filter:drop-shadow(10px 10px #000000);
 }
 
-.bento-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-  background-color: #fff; /* Optional: Background color */
+.bento-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* Top section takes same height of bottom */
+  grid-template-columns: 1fr 1fr; /* 3 equal columns */
+  gap: 20px; /* Add spacing between boxes */
+  width: 90vw;
+  height: calc(90% - 20px);
+  background-color: #fff;
 }
 
 .bento-box.large {
@@ -366,7 +374,6 @@ body {
   flex-direction: row; /* Arrange news sections horizontally */
   justify-content: space-between;
   align-items: stretch;
-  padding: 20px;
   background-color: #fff; /* Optional: Background color for large box */
 }
 
@@ -381,6 +388,12 @@ body {
   align-items: center; /* Center items vertically */
   justify-content: center; /* Center items horizontally */
   text-align: center; /* Center text inside */
+  transition: 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.news-section:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+  filter: drop-shadow(0px 0px #111111); /* Add shadow effect on hover */
 }
 
 .news-section h3 {
@@ -430,12 +443,23 @@ body {
   filter: drop-shadow(5px 5px #111111);
 }
 
+
+
+
+/* MARK: ABOUT */
+.about{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .about-container {
-  margin: 100px 0px 100px 90px;
+  /* margin: 100px 100px 100px 90px; */
   display: flex;
   align-items: flex-start;
   padding: 20px;
-  width: 100vw;
+  width: 95vw;
   height: 90vh;
 }
 
@@ -519,10 +543,11 @@ body {
 
 .skills-list {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  gap: 10px; /* Add spacing between the boxes */
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 0;
-  list-style: none; /* Remove default list styling */
+  list-style: none;
+  margin-bottom: 20px;
 }
 
 .skills-list li {
@@ -542,6 +567,9 @@ body {
   filter: drop-shadow(5px 5px #111111);
 }
 
+
+
+/* MARK: MERCH */
 .merch {
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
