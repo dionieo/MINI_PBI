@@ -310,7 +310,7 @@ body {
   transition: 0.3s ease;
 }
 
-.gambarSaya img:hover{
+.gambarSaya img:hover0{
   filter: saturate(1);
   rotate: -25deg;
 }
@@ -541,6 +541,87 @@ body {
   filter: drop-shadow(5px 5px #111111);
 }
 
+.skill-html:hover{
+  background-color: #e34c26; /* HTML color */
+  color: #fff;
+}
+.skill-css:hover{
+  background-color: #264de4; /* CSS color */
+  color: #fff;
+}
+.skill-js:hover{
+  background-color: #f7df1e; /* JavaScript color */
+  color: #111111;
+}
+.skill-java:hover{
+  background-color: #007396; /* Java color */
+  color: #fff;
+}
+.skill-kotlin:hover{
+  background-color: #0095d5; /* Kotlin color */
+  color: #fff;
+}
+.skill-r:hover{
+  background-color: #276dc3; /* R color */
+  color: #fff;
+}
+.skill-sql:hover{
+  background-color: #f29111; /* SQL color */
+  color: #fff;
+}
+.skill-bootstrap:hover{
+  background-color: #563d7c; /* Bootstrap color */
+  color: #fff;
+}
+.skill-tailwind:hover{
+  background-color: #38bdf8; /* Tailwind CSS color */
+  color: #111111;
+}
+.skill-git:hover{
+  background-color: #f05032; /* Git color */
+  color: #fff;
+}
+.skill-api:hover{
+  background-color: #4d4d4d; /* API color */
+  color: #fff;
+}
+.skill-responsive:hover{
+  background-color: #007bff; /* Responsive Design color */
+  color: #fff;
+}
+.skill-uiux:hover{
+  background-color: #f0f0f0; /* UI/UX Design color */
+  color: #111111;
+}
+.skill-wordpress:hover{
+  background-color: #21759b; /* WordPress color */
+  color: #fff;
+}
+.skill-firebase:hover{
+  background-color: #ffca28; /* Firebase color */
+  color: #111111;
+}
+.skill-linux:hover{
+  background-color: #363636; /* Linux color */
+  color: #fff;
+}
+.skill-react:hover{
+  background-color: #61dafb; /* React color */
+  color: #111111;
+}
+.skill-node:hover{
+  background-color: #8cc84b; /* Node.js color */
+  color: #111111;
+}
+.skill-python:hover{
+  background-color: #306998; /* Python color */
+  color: #fff;
+}
+.skill-php:hover{
+  background-color: #4f5b93; /* PHP color */
+  color: #fff;
+}
+
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -559,11 +640,10 @@ body {
   text-align: center; /* Center the text inside the box */
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   transition: transform 0.3s ease, background-color 0.3s ease, filter 0.3s ease; /* Add transition for smooth effect */
+  cursor: pointer;
 }
 
 .skills-list li:hover {
-  background-color: #007bff; /* Change background color on hover */
-  color: #111111; /* Change text color on hover */
   filter: drop-shadow(5px 5px #111111);
 }
 
@@ -620,9 +700,39 @@ body {
 }
 
 .bento-social-box:hover {
-  background-color: #007bff;
-  color: black;
   filter:drop-shadow(0px 0px #000000);
+}
+
+.github:hover {
+  color: #fff;
+  background-color: #1b1349;
+  small {
+    color: #fff;
+  }
+}
+
+.linkedin:hover {
+  color: #fff;
+  background-color: #0077b5;
+  small {
+    color: #fff;
+  }
+}
+
+.instagram:hover {
+  color: #fff;
+  background-color: #C13584;
+  small {
+    color: #fff;
+  }
+}
+
+.email:hover {
+  color: #fff;
+  background-color: #ea4335;
+  small {
+    color: #fff;
+  }
 }
 
 .bento-social-box i {
