@@ -1,14 +1,18 @@
 // KECILIN NAVBAR
 const closeAllDropdowns = () => {
   document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
-    toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown-menu"), false);
+    openDropdown.classList.remove("open");
   });
 };
 
 document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
+  button.setAttribute("aria-expanded", "false");
+
   button.addEventListener("click", () => {
     closeAllDropdowns(); // Close all open dropdowns
-    document.querySelector(".sidebar").classList.toggle("collapsed"); // Toggle collapsed class on sidebar
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("collapsed"); // Toggle collapsed class on sidebar
+    button.setAttribute("aria-expanded", String(!sidebar.classList.contains("collapsed")));
   });
 });
 

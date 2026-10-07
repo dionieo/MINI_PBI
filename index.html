@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Portfolio website of Dionisius Denanta, a programming student focused on web and mobile application development." />
         <title>Personal Landing Page | Dionisius Denanta</title>
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -13,7 +14,7 @@
     <body>
         <script src="https://kit.fontawesome.com/e0380c05bc.js" crossorigin="anonymous"></script>
 <!-- MARK: SIDEBAR -->
-        <button class="sidebar-menu-button">
+        <button class="sidebar-menu-button" type="button" aria-label="Open navigation menu">
             <span class="material-symbols-rounded">menu</span>
         </button>
         <aside class="sidebar">
@@ -21,12 +22,12 @@
             <a href="#" class="header-logo">
                 <img src="./img/logodion.png" alt="logo dion" />
             </a>
-            <button class="sidebar-toggler">
+            <button class="sidebar-toggler" type="button" aria-label="Toggle sidebar navigation">
                 <span class="material-symbols-rounded">chevron_left</span>
             </button>
             </header>
 
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav" aria-label="Main navigation">
             <!-- Primary Top Nav -->
             <ul class="nav-list primary-nav">
                 <li class="nav-item">
@@ -82,44 +83,43 @@
             </ul> -->
             </nav>
         </aside>
-        <div class="content-wrapper">
+        <main class="content-wrapper">
 
 
 
 <!-- MARK: HERO -->
-            <div class="hero" id="hero">
+            <section class="hero" id="hero" aria-labelledby="hero-title">
                 <div class="gambarSaya">
                     <img src="./img/formal-removebg-preview.png" alt="gambar wajah dionisius denanta"/>
                 </div>
                 <div class="containerKiri">
-                    <h1>Halo!</h1>
+                    <h1 id="hero-title">Halo!</h1>
                     <h2>My name is Dionisius Denanta</h2>
-                    <p>I'm a student who passionate in programming.</p>
+                    <p>I'm a student passionate about programming and building useful digital products.</p>
                 </div>
-            </div>
+            </section>
 
 
 
 <!-- MARK: ABOUT -->
-            <div class="about" id="about">
+            <section class="about" id="about" aria-labelledby="about-title">
             <div class="about-container">
                 <div class="about-left">
-                    <h2>About Me</h2>
+                    <h2 id="about-title">About Me</h2>
                     <p>
-                        I am a dedicated and enthusiastic programmer with a strong foundation in web and mobile application development. My journey in technology has been driven by a deep curiosity and a commitment to continuous improvement. I thrive on tackling challenging problems and transforming ideas into practical, user-friendly solutions.
+                        I am a programming student focused on web and mobile application development. I enjoy turning ideas into clean, practical, and user-friendly digital products.
                     </p>
                     <p>
-                        Over the years, I have gained hands-on experience in various programming languages and frameworks, allowing me to adapt quickly to new technologies and industry trends. My approach combines creativity with analytical thinking, ensuring that every project I undertake is both innovative and effective.
+                        My work combines front-end fundamentals, mobile development, database integration, and UI/UX thinking. I like learning by building, improving details, and making each project clearer than the last.
                     </p>
                     <ul>
-                        <li>Designed and developed a personal website to professionally showcase my portfolio and technical skills.</li>
-                        <li>Created a fully functional mobile application as part of a university assignment, demonstrating my ability to deliver robust solutions under academic deadlines.</li>
-                        <li>Completed numerous web development projects for practice, focusing on responsive design, accessibility, and performance optimization.</li>
-                        <li>Collaborated with peers on group projects, enhancing my teamwork and communication skills in a technical environment.</li>
-                        <li>Actively participate in online coding communities and regularly update my knowledge through courses and workshops.</li>
+                        <li>Built personal portfolio websites to showcase projects, skills, and development progress.</li>
+                        <li>Created mobile application projects using Kotlin, API integration, and Firebase.</li>
+                        <li>Practiced responsive web development with HTML, CSS, JavaScript, Bootstrap, and Tailwind.</li>
+                        <li>Worked with peers on group projects, improving communication and technical teamwork.</li>
                     </ul>
                     <p>
-                        I am committed to lifelong learning and am always eager to take on new challenges that allow me to grow both personally and professionally in the ever-evolving field of technology.
+                        I am currently sharpening my development workflow, code quality, and portfolio presentation so my projects are easier to understand and evaluate.
                     </p>
                 </div>
 
@@ -154,94 +154,130 @@
                 </div>
 
             </div>
-            </div>
+            </section>
 
 
 
 <!-- MARK: PROJECTS -->
-            <div class="projects" id="projects">
+            <section class="projects" id="projects" aria-labelledby="projects-title">
                 <div class="contentinnerwrapper">
-                    <h1>My Projects</h1>
+                    <h1 id="projects-title">My Projects</h1>
                     <div class="bento-container">
                         <div class="bento-box large">
-                            <div class="news-section">
-                            <div>
+                            <article class="news-section">
+                            <div class="project-card-content">
                                 <h3>To-Do List</h3>
-                                <img src="./img/todolist.png" alt="To-Do List">
-                                <a href="https://todolistbydion.kesug.com" target="_blank"><button>Visit Website</button></a>
+                                <img src="./img/todolist.png" alt="Screenshot of To-Do List project">
+                                <p>A simple task management website for adding, organizing, and tracking daily activities.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <a href="https://todolistbydion.kesug.com" target="_blank" rel="noopener noreferrer" class="project-button">Live Demo</a>
                             </div>
-                            </div>
-                            <div class="news-section">
-                            <div>
+                            </article>
+                            <article class="news-section">
+                            <div class="project-card-content">
                                 <h3>Personal Website (v1.0)</h3>
-                                <img src="/img/personalwebv1.png" alt="personal website v1.0">
-                                <a href="https;//punyadion.w3spaces.com" target="_blank"><button>Visit Website</button></a>
+                                <img src="./img/personalwebv1.png" alt="Screenshot of personal website version 1.0">
+                                <p>The first version of my portfolio website, built to practice layout, structure, and presentation.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>Portfolio</span>
+                                </div>
+                                <a href="https://punyadion.w3spaces.com" target="_blank" rel="noopener noreferrer" class="project-button">Live Demo</a>
                             </div>
-                            </div>
-                            <div class="news-section">
-                            <div>
+                            </article>
+                            <article class="news-section">
+                            <div class="project-card-content">
                                 <h3>Link Tree</h3>
-                                <img src="./img/linktree.png" alt="Link Tree">
-                                <a href="https://diyonlinktree.w3spaces.com/" target="_blank"><button>Visit Website</button></a>
+                                <img src="./img/linktree.png" alt="Screenshot of Link Tree project">
+                                <p>A compact personal link page that collects social profiles and important links in one place.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>Links</span>
+                                </div>
+                                <a href="https://diyonlinktree.w3spaces.com/" target="_blank" rel="noopener noreferrer" class="project-button">Live Demo</a>
                             </div>
-                            </div>
+                            </article>
                         </div>
                         <div class="bento-box large">
-                            <div class="news-section">
-                            <div>
+                            <article class="news-section">
+                            <div class="project-card-content">
                                 <h3>This Website</h3>
-                                <img src="#" alt="">
-                                <a href="https://github.com/dionieo/MINI_PBI" target="_blank"><button>Visit Repository</button></a>
+                                <div class="project-placeholder">Portfolio v2</div>
+                                <p>The current portfolio website with sidebar navigation, bento project cards, and social links.</p>
+                                <div class="project-tags">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                </div>
+                                <a href="https://github.com/dionieo/MINI_PBI" target="_blank" rel="noopener noreferrer" class="project-button">Repository</a>
                             </div>
-                            </div>
-                            <div class="news-section">
-                            <div>
+                            </article>
+                            <article class="news-section">
+                            <div class="project-card-content">
                                 <h3>ChatApp</h3>
-                                <img src="#" alt="">
-                                <a href="https://github.com/dionieo/chatAPP" target="_blank"><button>Visit Repository</button></a>
+                                <div class="project-placeholder">Chat App</div>
+                                <p>A chat application repository focused on practicing app structure and messaging features.</p>
+                                <div class="project-tags">
+                                    <span>Mobile App</span>
+                                    <span>Chat</span>
+                                    <span>Practice</span>
+                                </div>
+                                <a href="https://github.com/dionieo/chatAPP" target="_blank" rel="noopener noreferrer" class="project-button">Repository</a>
                             </div>
-                            </div>
-                            <div class="news-section">
-                            <div>
+                            </article>
+                            <article class="news-section">
+                            <div class="project-card-content">
                                 <h3>Form App</h3>
-                                <img src="#" alt="">
-                                <a href="https://github.com/dionieo/aplikasi_android_api_firebase" target="_blank"><button>Visit Repository</button></a>
+                                <div class="project-placeholder">Form App</div>
+                                <p>An Android form application project using API integration and Firebase as part of app development practice.</p>
+                                <div class="project-tags">
+                                    <span>Kotlin</span>
+                                    <span>API</span>
+                                    <span>Firebase</span>
+                                </div>
+                                <a href="https://github.com/dionieo/aplikasi_android_api_firebase" target="_blank" rel="noopener noreferrer" class="project-button">Repository</a>
                             </div>
-                            </div>
+                            </article>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
 
 
 <!-- MARK: CONNECT -->
-            <div class="connect" id="connect">
-                <h2>Connect with Me</h2>
+            <section class="connect" id="connect" aria-labelledby="connect-title">
+                <h2 id="connect-title">Connect with Me</h2>
                 <div class="bento-social-grid">
-                    <a href="https://github.com/dionieo" target="_blank" class="bento-social-box github">
+                    <a href="https://github.com/dionieo" target="_blank" rel="noopener noreferrer" class="bento-social-box github">
                         <i class="fa-brands fa-github"></i>
                         <span>GitHub</span>
                         <small>@dionieo</small>
                     </a>
-                    <a href="https://www.linkedin.com/in/dionisius-denanta-8ab3ba231/" target="_blank" class="bento-social-box linkedin">
+                    <a href="https://www.linkedin.com/in/dionisius-denanta-8ab3ba231/" target="_blank" rel="noopener noreferrer" class="bento-social-box linkedin">
                         <i class="fa-brands fa-linkedin"></i>
                         <span>LinkedIn</span>
                         <small>Dionisius Denanta</small>
                     </a>
-                    <a href="https://instagram.com/diondenanta" target="_blank" class="bento-social-box instagram">
+                    <a href="https://instagram.com/diondenanta" target="_blank" rel="noopener noreferrer" class="bento-social-box instagram">
                         <i class="fa-brands fa-instagram"></i>
                         <span>Instagram</span>
                         <small>@diondenanta</small>
                     </a>
-                    <a href="mailto:dionisiusdenanta@gmail.com" target="_blank" class="bento-social-box email">
+                    <a href="mailto:denantastar@gmail.com" class="bento-social-box email">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Email</span>
                         <small>denantastar@gmail.com</small>
                     </a>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
         <script src="./js/script.js"></script>
     </body>
 </html>
