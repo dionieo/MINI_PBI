@@ -21,7 +21,7 @@ if (window.innerWidth <= 2000) document.querySelector(".sidebar").classList.add(
 
 // SCROLL SAMPING
 document.addEventListener('wheel', (event) => {
-  if (event.deltaY !== 0) {
+  if (window.innerWidth > 768 && event.deltaY !== 0) {
     event.preventDefault(); // Prevent default vertical scrolling
     window.scrollBy({
       left: event.deltaY, // Scroll horizontally based on vertical scroll input
