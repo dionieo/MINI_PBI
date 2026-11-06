@@ -1,23 +1,53 @@
-// KECILIN NAVBAR
+// NAVIGATION SIDEBAR
+const sidebar = document.querySelector(".sidebar");
+const menuButton = document.querySelector(".sidebar-menu-button");
+const sidebarToggler = document.querySelector(".sidebar-toggler");
+const mobileBreakpoint = window.matchMedia("(max-width: 768px)");
+
 const closeAllDropdowns = () => {
   document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
     openDropdown.classList.remove("open");
   });
 };
 
-document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
-  button.setAttribute("aria-expanded", "false");
+const setMobileMenu = (isOpen) => {
+  sidebar.classList.toggle("mobile-open", isOpen);
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  menuButton.querySelector("span").textContent = isOpen ? "close" : "menu";
+};
 
-  button.addEventListener("click", () => {
-    closeAllDropdowns(); // Close all open dropdowns
-    const sidebar = document.querySelector(".sidebar");
-    sidebar.classList.toggle("collapsed"); // Toggle collapsed class on sidebar
-    button.setAttribute("aria-expanded", String(!sidebar.classList.contains("collapsed")));
-  });
+menuButton.addEventListener("click", () => {
+  if (!mobileBreakpoint.matches) return;
+  closeAllDropdowns();
+  setMobileMenu(!sidebar.classList.contains("mobile-open"));
 });
 
+sidebarToggler.addEventListener("click", () => {
+  if (mobileBreakpoint.matches) return;
+  closeAllDropdowns();
+  sidebar.classList.toggle("collapsed");
+  sidebarToggler.setAttribute("aria-expanded", String(!sidebar.classList.contains("collapsed")));
+});
+
+document.addEventListener("click", (event) => {
+  if (mobileBreakpoint.matches && sidebar.classList.contains("mobile-open") && !sidebar.contains(event.target) && !menuButton.contains(event.target)) {
+    setMobileMenu(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && mobileBreakpoint.matches && sidebar.classList.contains("mobile-open")) {
+    setMobileMenu(false);
+    menuButton.focus();
+  }
+});
+
+mobileBreakpoint.addEventListener("change", () => setMobileMenu(false));
+
 // COLLAPSE DI SCREEN KECIL
-if (window.innerWidth <= 2000) document.querySelector(".sidebar").classList.add("collapsed");
+if (window.innerWidth <= 2000) sidebar.classList.add("collapsed");
+sidebarToggler.setAttribute("aria-expanded", String(!sidebar.classList.contains("collapsed")));
 
 // ACTIVE LINK HANDLER
 const setActiveLink = (targetId) => {
@@ -44,6 +74,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     setActiveLink(targetId);
 
     if (window.innerWidth <= 768) {
+      if (link.closest(".sidebar")) setMobileMenu(false);
       targetSection.scrollIntoView({
         behavior: "smooth",
         block: "start",
