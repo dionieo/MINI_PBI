@@ -19,6 +19,16 @@ document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((but
 // COLLAPSE DI SCREEN KECIL
 if (window.innerWidth <= 2000) document.querySelector(".sidebar").classList.add("collapsed");
 
+// ACTIVE LINK HANDLER
+const setActiveLink = (targetId) => {
+  if (!targetId || targetId === "#") return;
+  document.querySelectorAll(".sidebar-nav .nav-link").forEach((link) => {
+    const isTarget = link.getAttribute("href") === targetId;
+    link.classList.toggle("active", isTarget);
+    link.closest(".nav-item")?.classList.toggle("active", isTarget);
+  });
+};
+
 // NAVIGASI SECTION
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
@@ -31,6 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     if (!targetSection) return;
 
     event.preventDefault();
+    setActiveLink(targetId);
 
     if (window.innerWidth <= 768) {
       targetSection.scrollIntoView({
@@ -51,7 +62,38 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-// SCROLL SAMPING
+// SCROLL SPY AKTIFKAN TOMBOL SAAT SCROLL
+const sections = document.querySelectorAll("section[id]");
+const updateActiveOnScroll = () => {
+  if (!sections.length) return;
+
+  if (window.innerWidth <= 768) {
+    const scrollPosition = window.scrollY + 200;
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = `#${section.getAttribute("id")}`;
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        setActiveLink(id);
+      }
+    });
+  } else {
+    const scrollLeft = window.scrollX + 300;
+    sections.forEach((section) => {
+      const left = section.offsetLeft;
+      const width = section.offsetWidth;
+      const id = `#${section.getAttribute("id")}`;
+      if (scrollLeft >= left && scrollLeft < left + width) {
+        setActiveLink(id);
+      }
+    });
+  }
+};
+
+window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
+setActiveLink("#hero");
+
+// SCROLL SAMPING DESKTOP
 document.addEventListener('wheel', (event) => {
   if (window.innerWidth > 768 && event.deltaY !== 0) {
     event.preventDefault(); // Prevent default vertical scrolling
