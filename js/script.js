@@ -68,15 +68,16 @@ const updateActiveOnScroll = () => {
   if (!sections.length) return;
 
   if (window.innerWidth <= 768) {
-    const scrollPosition = window.scrollY + 200;
+    const activationPoint = window.innerHeight * 0.4;
+    let activeSection = sections[0];
+
     sections.forEach((section) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = `#${section.getAttribute("id")}`;
-      if (scrollPosition >= top && scrollPosition < top + height) {
-        setActiveLink(id);
+      if (section.getBoundingClientRect().top <= activationPoint) {
+        activeSection = section;
       }
     });
+
+    setActiveLink(`#${activeSection.getAttribute("id")}`);
   } else {
     const scrollLeft = window.scrollX + 300;
     sections.forEach((section) => {
